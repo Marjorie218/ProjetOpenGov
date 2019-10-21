@@ -9,14 +9,15 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Citizen {
+public class Proposal {
+	
 	
 	// Attributes
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCitizen;
-	private String login;
-	private String password;
+	private int proposalId;
+	private String title;
+	private String description;
 	
 	// Relations
 	
