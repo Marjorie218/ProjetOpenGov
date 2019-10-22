@@ -8,14 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-import com.inti.formation.CrossedEntity.Citizen_Proposal;
-import com.inti.formation.CrossedEntity.Citizen_Survey;
+import com.inti.formation.crossedEntity.Citizen_Proposal;
+import com.inti.formation.crossedEntity.Citizen_Survey;
 
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name="CitizenTable") 
 public class Citizen implements Serializable {
 	
 	/**
@@ -26,7 +28,7 @@ public class Citizen implements Serializable {
 	// Attributes
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idCitizen;
+	private int citizenId;
 	private String login;
 	private String password;
 	

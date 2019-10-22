@@ -1,16 +1,14 @@
-package com.inti.formation.CrossedEntity;
+package com.inti.formation.crossedEntity;
 
 import java.io.Serializable;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
-
 import com.inti.formation.entity.Citizen;
 import com.inti.formation.entity.Survey;
+import com.inti.formation.idEntity.Citizen_SurveyId;
 
 import lombok.Data;
 
@@ -20,18 +18,17 @@ public class Citizen_Survey implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
-
-	@Id
-	private int idtable2;
 	// Attributes
 	private int vote;
 	
 	// Relations
+	@EmbeddedId
+	private Citizen_SurveyId citizenSurveyId;
 	@ManyToOne 
-	@PrimaryKeyJoinColumn (name = "fkCitizen", referencedColumnName = "citizenId")
+	@JoinColumn (name = "citizenId", referencedColumnName = "citizenId", updatable = false, insertable = false)
 	private Citizen citizen;
 	@ManyToOne 
-	@PrimaryKeyJoinColumn (name = "fkSurvey", referencedColumnName = "surveyId")
+	@JoinColumn (name = "surveyId", referencedColumnName = "surveyId", updatable = false, insertable = false)
 	private Survey survey;
 
 }

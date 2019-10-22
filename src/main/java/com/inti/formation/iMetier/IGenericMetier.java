@@ -1,4 +1,4 @@
-package com.inti.formation.IMetier;
+package com.inti.formation.iMetier;
 
 import java.util.List;
 

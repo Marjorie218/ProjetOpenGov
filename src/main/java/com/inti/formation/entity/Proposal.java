@@ -1,7 +1,5 @@
 package com.inti.formation.entity;
 
-import com.inti.formation.CrossedEntity.Citizen_Proposal;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -12,11 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.inti.formation.crossedEntity.Citizen_Proposal;
 
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name="ProposalTable") 
 public class Proposal implements Serializable {
 	
 	

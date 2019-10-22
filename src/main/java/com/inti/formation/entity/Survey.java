@@ -8,13 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-import com.inti.formation.CrossedEntity.Citizen_Survey;
+import com.inti.formation.crossedEntity.Citizen_Survey;
 
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name="SurveyTable") 
 public class Survey implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

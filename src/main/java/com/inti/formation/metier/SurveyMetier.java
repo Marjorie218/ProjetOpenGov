@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-
-import com.inti.formation.IMetier.IGenericMetier;
 import com.inti.formation.entity.Survey;
+import com.inti.formation.iMetier.IGenericMetier;
 import com.inti.formation.repository.ISurveyRepository;
 
 @Service

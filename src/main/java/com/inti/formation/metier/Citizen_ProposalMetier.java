@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.inti.formation.CrossedEntity.Citizen_Proposal;
-import com.inti.formation.IMetier.IGenericMetier;
+import com.inti.formation.crossedEntity.Citizen_Proposal;
+import com.inti.formation.iMetier.IGenericMetier;
 import com.inti.formation.repository.ICitizen_ProposalRepository;
 @Service
 public class Citizen_ProposalMetier implements IGenericMetier<Citizen_Proposal>{
