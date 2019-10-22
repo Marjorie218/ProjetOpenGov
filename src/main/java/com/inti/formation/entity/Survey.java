@@ -25,6 +25,7 @@ public class Survey implements Serializable {
 	private int surveyId;
 	private String question;
 	private String possibleAnswers;
+
 	private String result;
 	private int numberRespondents;
 	

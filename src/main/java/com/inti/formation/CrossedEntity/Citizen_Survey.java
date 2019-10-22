@@ -3,6 +3,7 @@ package com.inti.formation.CrossedEntity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,6 +19,7 @@ import lombok.Data;
 public class Citizen_Survey implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+
 
 	@Id
 	private int idtable2;
