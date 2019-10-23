@@ -3,6 +3,7 @@ package com.inti.formation.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,16 +20,14 @@ import lombok.Data;
 @Entity
 @Table(name="CitizenTable") 
 public class Citizen implements Serializable {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 	// Attributes
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int citizenId;
+	@Column(unique = true)
 	private String login;
 	private String password;
 	
