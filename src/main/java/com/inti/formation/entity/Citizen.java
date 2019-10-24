@@ -14,8 +14,14 @@ import javax.persistence.Table;
 import com.inti.formation.crossedEntity.Citizen_Proposal;
 import com.inti.formation.crossedEntity.Citizen_Survey;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name="CitizenTable") 
