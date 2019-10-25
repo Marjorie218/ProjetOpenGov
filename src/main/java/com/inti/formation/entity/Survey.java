@@ -12,11 +12,17 @@ import javax.persistence.Table;
 
 import com.inti.formation.crossedEntity.Citizen_Survey;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Builder
 @Data
 @Entity
 @Table(name="SurveyTable") 
+@NoArgsConstructor
+@AllArgsConstructor
 public class Survey implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

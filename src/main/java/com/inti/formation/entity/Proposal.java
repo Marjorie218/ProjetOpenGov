@@ -13,12 +13,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.inti.formation.crossedEntity.Citizen_Proposal;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Builder
 @Data
 @Entity
 @Table(name="ProposalTable") 
+@NoArgsConstructor
+@AllArgsConstructor
 public class Proposal implements Serializable {
 	
 	
@@ -37,7 +42,6 @@ public class Proposal implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="idCitizen")
 	private Citizen creatorProposal;
-	
 	@OneToMany(mappedBy = "proposal")
 	private List<Citizen_Proposal> citizenProposals;
 	

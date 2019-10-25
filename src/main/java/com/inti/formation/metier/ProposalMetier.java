@@ -22,9 +22,9 @@ public class ProposalMetier implements IGenericMetier<Proposal> {
 		this.repo = repo;
 	}
 
-	public void save(Proposal p) {
+	public Proposal saveMe(Proposal p) {
 
-		repo.save(p);
+		return repo.save(p);
 
 	}
 
@@ -49,6 +49,12 @@ public class ProposalMetier implements IGenericMetier<Proposal> {
 	public List<Proposal> getAll() {
 
 		return repo.findAll();
+	}
+
+	@Override
+	public void save(Proposal g) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

@@ -2,21 +2,25 @@ package com.inti.formation.dto;
 
 import java.util.List;
 
-import com.inti.formation.crossedEntity.Citizen_Survey;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CitizenCredentialDto {
+public class CitizenFullDto {
 	
+	// Attributes
 	private int citizenId;
 	private String login;
 	private String password;
+	
+	// Relations
+	private List<ProposalCredentialDto> proposals;
+	private List<Citizen_SurveyCitizenFullDto> citizenSurveys;
+	private List<Citizen_ProposalCitizenFullDto> citizenProposals;
 
 }

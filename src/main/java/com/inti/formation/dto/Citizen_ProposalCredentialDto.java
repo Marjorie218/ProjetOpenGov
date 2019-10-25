@@ -9,14 +9,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CitizenCredentialDto {
-	
-	private int citizenId;
-	private String login;
-	private String password;
+public class Citizen_ProposalCredentialDto {
+
+	private double rate;
+	private String comment;
 
 }

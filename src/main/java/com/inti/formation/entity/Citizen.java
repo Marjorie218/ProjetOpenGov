@@ -20,11 +20,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Entity
 @Table(name="CitizenTable") 
+@NoArgsConstructor
+@AllArgsConstructor
 public class Citizen implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -44,7 +44,5 @@ public class Citizen implements Serializable {
 	private List<Citizen_Survey> citizenSurveys;
 	@OneToMany(mappedBy = "citizen")
 	private List<Citizen_Proposal> citizenProposals;
-	
-	
 	
 }

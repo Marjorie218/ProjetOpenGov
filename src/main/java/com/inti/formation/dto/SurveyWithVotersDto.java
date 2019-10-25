@@ -13,10 +13,17 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CitizenCredentialDto {
+public class SurveyWithVotersDto {
 	
-	private int citizenId;
-	private String login;
-	private String password;
+	// Attributes
+	private int surveyId;
+	private String question;
+	private String possibleAnswers;
+
+	private String result;
+	private int numberRespondents;
+	
+	// Relations
+	private CitizenCredentialDto citizenCredentialDto;
 
 }

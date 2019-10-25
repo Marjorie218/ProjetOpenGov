@@ -1,6 +1,7 @@
 package com.inti.formation.crossedEntity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -10,10 +11,16 @@ import com.inti.formation.entity.Citizen;
 import com.inti.formation.entity.Survey;
 import com.inti.formation.idEntity.Citizen_SurveyId;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Builder
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Citizen_Survey implements Serializable{
 	
 	private static final long serialVersionUID = 1L;

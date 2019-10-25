@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inti.formation.dto.CitizenCredentialDto;
+import com.inti.formation.dto.CitizenFullDto;
 import com.inti.formation.entity.Citizen;
 import com.inti.formation.mapper.CitizenMapper;
 import com.inti.formation.metier.CitizenMetier;
@@ -28,8 +30,13 @@ public class CitizenController {
 	private CitizenMapper citizenMapper;
 
 	@RequestMapping(value="/findAll", method = RequestMethod.GET)
-	public List<Citizen> findAll() {
-		return citizenMetier.getAll();
+	public List<CitizenFullDto> findAll() {
+		return citizenMapper.citizenListToCitizenFullDtoList(citizenMetier.getAll());
+	}
+
+	@RequestMapping(value="/find/{id}", method = RequestMethod.GET)
+	public CitizenFullDto find(@PathVariable int id) {
+		return citizenMapper.citizenToCitizenFullDto(citizenMetier.getOne(id));
 	}
 
 	@RequestMapping(value="/authenticate", method = RequestMethod.POST)

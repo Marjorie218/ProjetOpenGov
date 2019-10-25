@@ -13,10 +13,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CitizenCredentialDto {
+public class ProposalCredentialDto {
 	
-	private int citizenId;
-	private String login;
-	private String password;
+	private int proposalId;
+	private String title;
+	private String description;
 
 }

@@ -1,9 +1,5 @@
 package com.inti.formation.dto;
 
-import java.util.List;
-
-import com.inti.formation.crossedEntity.Citizen_Survey;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +9,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CitizenCredentialDto {
+public class ProposalWithCreatorDto {
 	
-	private int citizenId;
-	private String login;
-	private String password;
+	private int proposalId;
+	private String title;
+	private String description;
+	
+	private CitizenCredentialDto creatorProposal;
 
 }
