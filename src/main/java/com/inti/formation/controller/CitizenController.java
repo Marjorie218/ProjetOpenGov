@@ -34,7 +34,7 @@ public class CitizenController {
 		return citizenMapper.citizenListToCitizenFullDtoList(citizenMetier.getAll());
 	}
 
-	@RequestMapping(value="/find/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/findOne/{id}", method = RequestMethod.GET)
 	public CitizenFullDto find(@PathVariable int id) {
 		return citizenMapper.citizenToCitizenFullDto(citizenMetier.getOne(id));
 	}
