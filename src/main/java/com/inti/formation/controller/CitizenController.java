@@ -45,7 +45,5 @@ public class CitizenController {
 		citizenCredentialDto = citizenMapper.citizenToCitizenCredentialDto(citizenMetier.authenticate(citizen.getLogin(), citizen.getPassword()));
 		return citizenCredentialDto;
 	}
-	
-	
 
 }

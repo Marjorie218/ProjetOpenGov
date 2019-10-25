@@ -2,8 +2,6 @@ package com.inti.formation.dto;
 
 import java.util.List;
 
-import com.inti.formation.crossedEntity.Citizen_Survey;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SurveyWithVotersDto {
+public class SurveyFullDto {
 	
 	// Attributes
 	private int surveyId;
@@ -24,6 +22,6 @@ public class SurveyWithVotersDto {
 	private int numberRespondents;
 	
 	// Relations
-	private CitizenCredentialDto citizenCredentialDto;
+	private List<Citizen_SurveyWithCitizenDto> citizenSurveys;
 
 }

@@ -20,7 +20,7 @@ public class CitizenFullDto {
 	
 	// Relations
 	private List<ProposalCredentialDto> proposals;
-	private List<Citizen_SurveyCitizenFullDto> citizenSurveys;
+	private List<Citizen_SurveyWithSurveyDto> citizenSurveys;
 	private List<Citizen_ProposalWithProposalDto> citizenProposals;
 
 }

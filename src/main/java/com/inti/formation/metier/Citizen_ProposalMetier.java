@@ -15,8 +15,8 @@ public class Citizen_ProposalMetier implements IGenericMetier<Citizen_Proposal>{
 	ICitizen_ProposalRepository citizen_ProposalRepository;
 	
 	@Override
-	public void save(Citizen_Proposal citizen_Proposal) {
-		citizen_ProposalRepository.save(citizen_Proposal);
+	public Citizen_Proposal save(Citizen_Proposal citizen_Proposal) {
+		return citizen_ProposalRepository.save(citizen_Proposal);
 	}
 
 	@Override

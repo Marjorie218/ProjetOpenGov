@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Citizen_SurveyCitizenFullDto {
+public class Citizen_SurveyWithCitizenDto {
 
 	// Attributes
 	private int vote;
 	
 	// Relations
-	private SurveyCredentialDto survey;
+	private CitizenCredentialDto citizen;
 
 }

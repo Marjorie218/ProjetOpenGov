@@ -40,7 +40,7 @@ public class CitizenMapper {
 				.login(citizen.getLogin())
 				.password(citizen.getPassword())
 				.proposals(proposalMapper.proposalListToProposalCredentialDtoList(citizen.getProposals()))
-				.citizenSurveys(citizen_SurveyMapper.citizen_SurveyListToCitizen_SurveyCitizenFullDtoList(citizen.getCitizenSurveys()))
+				.citizenSurveys(citizen_SurveyMapper.citizen_SurveyListToCitizen_SurveyWithSurveyDtoList(citizen.getCitizenSurveys()))
 				.citizenProposals(citizen_ProposalMapper.citizen_ProposalListToCitizen_ProposalCitizenFullDtoList(citizen.getCitizenProposals()))
 				.build();
 	}

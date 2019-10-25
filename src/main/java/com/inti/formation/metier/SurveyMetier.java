@@ -24,8 +24,8 @@ public class SurveyMetier implements IGenericMetier<Survey>{
 		this.repo = repo;
 	}
 
-	public void save(Survey s) {
-		repo.save(s);
+	public Survey save(Survey s) {
+		return repo.save(s);
 	}
 
 	@Override

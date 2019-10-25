@@ -15,8 +15,8 @@ public class Citizen_SurveyMetier implements IGenericMetier<Citizen_Survey>{
 	ICitizen_SurveyRepository citizen_SurveyRepository;
 	
 	@Override
-	public void save(Citizen_Survey citizen_Survey) {
-		citizen_SurveyRepository.save(citizen_Survey);
+	public Citizen_Survey save(Citizen_Survey citizen_Survey) {
+		return citizen_SurveyRepository.save(citizen_Survey);
 	}
 
 	@Override
