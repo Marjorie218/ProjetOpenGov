@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Citizen_ProposalCitizenFullDto {
+public class Citizen_ProposalWithProposalDto {
 	
 	// Attributes
 	private double rate;

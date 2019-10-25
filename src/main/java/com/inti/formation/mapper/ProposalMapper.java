@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.inti.formation.dto.ProposalCredentialDto;
+import com.inti.formation.dto.ProposalFullDto;
 import com.inti.formation.dto.ProposalWithCreatorDto;
 import com.inti.formation.entity.Proposal;
 
@@ -15,6 +16,8 @@ public class ProposalMapper {
 	
 	@Autowired
 	CitizenMapper citizenMapper;
+	@Autowired
+	Citizen_ProposalMapper citizen_ProposalMapper;
 
 	public Proposal proposalCredentialDtoToProposal(ProposalCredentialDto proposalCredentialDto) {
 		return Proposal.builder()
@@ -48,5 +51,25 @@ public class ProposalMapper {
 		});
 		return proposalCredentialDtoList;
 	}
+
+	public ProposalFullDto proposalToProposalFullDto(Proposal proposal) {
+		return ProposalFullDto.builder()
+				.proposalId(proposal.getProposalId())
+				.title(proposal.getTitle())
+				.description(proposal.getDescription())
+				.creatorProposal(citizenMapper.citizenToCitizenCredentialDto(proposal.getCreatorProposal()))
+				.citizenProposals(citizen_ProposalMapper.citizen_ProposalListToCitizen_ProposalWithCitizenDtoList(proposal.getCitizenProposals()))
+				.build();
+	}
+
+	public List<ProposalFullDto> proposalListToProposalFullDtoList(List<Proposal> proposalList) {
+		List<ProposalFullDto> proposalFullDtoList = new ArrayList<ProposalFullDto>();
+		proposalList.parallelStream().forEach((prop) -> {
+			proposalFullDtoList.add(this.proposalToProposalFullDto(prop));
+		});
+		return proposalFullDtoList;
+	}
+	
+	
 
 }
