@@ -28,7 +28,7 @@ public class Citizen_ProposalMapper {
 
 	public List<Citizen_ProposalWithProposalDto> citizen_ProposalListToCitizen_ProposalCitizenFullDtoList(List<Citizen_Proposal> citizen_ProposalList) {
 		List<Citizen_ProposalWithProposalDto> citizen_ProposalCitizenFullDto = new ArrayList<Citizen_ProposalWithProposalDto>();
-		citizen_ProposalList.parallelStream().forEach((cit_prop) -> {
+		citizen_ProposalList.stream().forEach((cit_prop) -> {
 			citizen_ProposalCitizenFullDto.add(this.citizen_ProposalTocitizen_ProposalCitizenFullDto(cit_prop));
 		});
 		return citizen_ProposalCitizenFullDto;
@@ -44,7 +44,7 @@ public class Citizen_ProposalMapper {
 
 	public List<Citizen_ProposalWithCitizenDto> citizen_ProposalListToCitizen_ProposalWithCitizenDtoList(List<Citizen_Proposal> citizen_ProposalList) {
 		List<Citizen_ProposalWithCitizenDto> citizen_ProposalCitizenFullDto = new ArrayList<Citizen_ProposalWithCitizenDto>();
-		citizen_ProposalList.parallelStream().forEach((cit_prop) -> {
+		citizen_ProposalList.stream().forEach((cit_prop) -> {
 			citizen_ProposalCitizenFullDto.add(this.citizen_ProposalToCitizen_ProposalWithCitizenDto(cit_prop));
 		});
 		return citizen_ProposalCitizenFullDto;

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.inti.formation.dto.CitizenFullDto;
 import com.inti.formation.dto.ProposalFullDto;
 import com.inti.formation.entity.Proposal;
 import com.inti.formation.mapper.ProposalMapper;
@@ -41,6 +40,6 @@ public class ProposalController {
 	
 	@PostMapping(value = "/add")
 	public Proposal addMyProps(@RequestBody Proposal proposal) {
-		return proposalMetier.saveMe(proposal);
+		return proposalMetier.save(proposal);
 	}
 }

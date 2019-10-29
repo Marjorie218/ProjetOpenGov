@@ -38,7 +38,7 @@ public class SurveyMapper {
 
 	public List<SurveyCredentialDto> surveyListToSurveyCredentialDtoList(List<Survey> surveyList) {
 		List<SurveyCredentialDto> surveyCredentialDtoList = new ArrayList<SurveyCredentialDto>();
-		surveyList.parallelStream().forEach((surv) -> {
+		surveyList.stream().forEach((surv) -> {
 			surveyCredentialDtoList.add(this.surveyToSurveyCredentialDto(surv));
 		});
 		return surveyCredentialDtoList;

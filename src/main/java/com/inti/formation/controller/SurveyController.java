@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.inti.formation.dto.SurveyEfficace;
 import com.inti.formation.dto.SurveyFullDto;
 import com.inti.formation.entity.Survey;
+import com.inti.formation.mapper.SurveyEfficaceMapper;
 import com.inti.formation.mapper.SurveyMapper;
 import com.inti.formation.metier.SurveyMetier;
 
@@ -28,6 +30,8 @@ public class SurveyController {
 	private SurveyMetier surveyMetier;
 	@Autowired
 	private SurveyMapper surveyMapper;
+	@Autowired
+	private SurveyEfficaceMapper efficaceMapper;
 
 	@RequestMapping(value="/findAll", method = RequestMethod.GET)
 	public List<SurveyFullDto> findAll() {
@@ -42,6 +46,11 @@ public class SurveyController {
 	@PostMapping(value = "/add")
 	public Survey addMySurv(@RequestBody Survey survey) {
 		return surveyMetier.save(survey);
+	}
+
+	@RequestMapping(value="/findEff/{id}", method = RequestMethod.GET)
+	public SurveyEfficace findEff(@PathVariable int id) {
+		return efficaceMapper.surveyToSurveyEfficace(surveyMetier.getOne(id));
 	}
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.inti.formation.dto.CitizenCredentialDto;
 import com.inti.formation.dto.CitizenFullDto;
 import com.inti.formation.entity.Citizen;
+import com.inti.formation.entity.Proposal;
 import com.inti.formation.mapper.CitizenMapper;
 import com.inti.formation.metier.CitizenMetier;
 
@@ -37,6 +39,12 @@ public class CitizenController {
 	@RequestMapping(value="/findOne/{id}", method = RequestMethod.GET)
 	public CitizenFullDto find(@PathVariable int id) {
 		return citizenMapper.citizenToCitizenFullDto(citizenMetier.getOne(id));
+	}
+	
+	@PostMapping(value = "/add")
+	public CitizenCredentialDto addMyProps(@RequestBody CitizenCredentialDto citizenCredentialDto) {
+		Citizen citizen = citizenMapper.citizenCredentialDtoToCitizen(citizenCredentialDto);
+		return citizenMapper.citizenToCitizenCredentialDto(citizenMetier.save(citizen));
 	}
 
 	@RequestMapping(value="/authenticate", method = RequestMethod.POST)

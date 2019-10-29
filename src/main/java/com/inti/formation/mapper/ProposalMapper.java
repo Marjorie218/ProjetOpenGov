@@ -46,7 +46,7 @@ public class ProposalMapper {
 
 	public List<ProposalCredentialDto> proposalListToProposalCredentialDtoList(List<Proposal> proposalList) {
 		List<ProposalCredentialDto> proposalCredentialDtoList = new ArrayList<ProposalCredentialDto>();
-		proposalList.parallelStream().forEach((prop) -> {
+		proposalList.stream().forEach((prop) -> {
 			proposalCredentialDtoList.add(this.proposalToProposalCredentialDto(prop));
 		});
 		return proposalCredentialDtoList;
@@ -64,7 +64,7 @@ public class ProposalMapper {
 
 	public List<ProposalFullDto> proposalListToProposalFullDtoList(List<Proposal> proposalList) {
 		List<ProposalFullDto> proposalFullDtoList = new ArrayList<ProposalFullDto>();
-		proposalList.parallelStream().forEach((prop) -> {
+		proposalList.stream().forEach((prop) -> {
 			proposalFullDtoList.add(this.proposalToProposalFullDto(prop));
 		});
 		return proposalFullDtoList;

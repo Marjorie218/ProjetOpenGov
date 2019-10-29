@@ -1,17 +1,19 @@
 package com.inti.formation.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Citizen_SurveyCredentialDto {
-
+@NoArgsConstructor
+public class SurveyEfficace {
+	
 	// Attributes
-	private int vote;
+	private int surveyId;
+	private String question;
+	private List<Answer> answers;
 
 }

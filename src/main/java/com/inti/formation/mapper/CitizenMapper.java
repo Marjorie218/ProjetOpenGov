@@ -47,7 +47,7 @@ public class CitizenMapper {
 	
 	public List<CitizenFullDto> citizenListToCitizenFullDtoList(List<Citizen> citizenList) {
 		List<CitizenFullDto> CitizenFullDtoList = new ArrayList<CitizenFullDto>();
-		citizenList.parallelStream().forEach((citizen) -> {
+		citizenList.stream().forEach((citizen) -> {
 			CitizenFullDtoList.add(this.citizenToCitizenFullDto(citizen));
 		});
 		return CitizenFullDtoList;

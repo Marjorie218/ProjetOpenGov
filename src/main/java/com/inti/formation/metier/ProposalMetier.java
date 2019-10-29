@@ -22,15 +22,8 @@ public class ProposalMetier implements IGenericMetier<Proposal> {
 		this.repo = repo;
 	}
 
-	@Override
 	public Proposal save(Proposal p) {
 		return repo.save(p);
-	}
-
-	public Proposal saveMe(Proposal p) {
-
-		return repo.save(p);
-
 	}
 
 	@Override
